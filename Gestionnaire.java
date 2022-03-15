@@ -1,4 +1,5 @@
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 
 import java.util.List;
 
@@ -27,5 +28,11 @@ public class Gestionnaire {
 
     public Scene getThescene() {
         return thescene;
+    }
+
+    public Vehicule Arithmos() {
+        int R = (int) ((Math.random() * (this.POS_IN_x.size() - 0)) + 0);
+        Vehicule V = new Vehicule();
+        return V;
     }
 }

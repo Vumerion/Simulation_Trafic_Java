@@ -32,7 +32,7 @@ public class Vehicule {
 
     int accelerate;
     int v_max=120;
-    int width;
+    int width=2;
 
     ImageView Visual=new ImageView("voiture_éclatée.png");
 
@@ -134,6 +134,14 @@ public class Vehicule {
         this.angle=this.angle%360;
         }
 
+    public boolean IsArrived() {
+        if (this.getPos_x() - this.getDestination_cross().getPos_x() < 0.5 & this.getPos_y() - this.getDestination_cross().getPos_y() < 0.5) {
+            return true;
+        }
+        else {
+                return false;
+        }
+    }
 
         public void Move(){
             //int old_x=getPos_x();
@@ -142,4 +150,20 @@ public class Vehicule {
             this.pos_x=this.pos_x+this.v_x;
             this.pos_y=this.pos_y+this.v_y;
         }
+
+    public void nexstep(long now) {
+        //DAP : déclaration d'accord préhalable.
+        boolean DAP = this.Verify();
+        if (DAP=true) {
+            this.Vroomvroom();
+        }
+    }
+
+    private void Vroomvroom() {
+    }
+
+    private boolean Verify() {
+        boolean B = true;
+        return B;
+    }
 }

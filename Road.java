@@ -1,10 +1,14 @@
-import java.util.List;
-
 public class Road {
+    private static Vehicule[] L_Veh;
     Croisement Cross1;
     Croisement Cross2;
     float speed_limit;
-    List<Vehicule> L_Veh;
+
+    public static void nextstep(long now) {
+        for (Vehicule V : L_Veh){
+            V.nexstep(now);
+        }
+    }
 
     public Croisement getCross2() {
         return Cross2;
@@ -18,7 +22,7 @@ public class Road {
         return speed_limit;
     }
 
-    public List<Vehicule> getVehicules(){
+    public Vehicule[] getVehicules(){
         return L_Veh;
     }
 }
